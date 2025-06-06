@@ -1,4 +1,5 @@
 import csv, re
+from datetime import datetime
 from models.tarefa import Tarefa
 
 ARQUIVO = "tarefas.csv"
@@ -27,4 +28,8 @@ def exportar_pendentes(tarefas):
                 f.write(f"{t.id} - {t.titulo} (até {t.data_entrega})\n")
 
 def valida_data(data):
-    return re.search("[0-9]{4}-[0-9]{2}-[0-9]{2}", data)
+    try:
+        datetime.strptime(data, "%Y-%m-%d")
+        return True
+    except ValueError:
+        return False

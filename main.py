@@ -1,6 +1,6 @@
 from models.tarefa import Tarefa
 from utils import carregar_tarefas, salvar_tarefas, exportar_pendentes, valida_data
-from datetime import datetime
+
 
 def gerar_id(tarefas):
     return max([t.id for t in tarefas], default=0) + 1
@@ -21,7 +21,7 @@ def menu():
             titulo = input("Título: ")
             descricao = input("Descrição: ")
             data_entrega = input("Data de entrega (YYYY-MM-DD): ")
-            while(valida_data(data_entrega) == None):
+            while(valida_data(data_entrega) == False):
                 print("Data Inválida. Favor inserir uma nova data!")
                 data_entrega = input("Data de entrega (YYYY-MM-DD): ")
             nova = Tarefa(gerar_id(tarefas), titulo, descricao, data_entrega)

@@ -1,1 +1,28 @@
+# Bytecode
 __pycache__/
+*.py[cod]
+*$py.class
+
+# Arquivos de log e temporários
+*.log
+*.tmp
+
+# Ambientes virtuais
+venv/
+.env/
+.envrc
+.venv/
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+
+# Arquivos de SO
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos de banco e exportações
+tarefas.csv
+relatorio_pendentes.txt
