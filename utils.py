@@ -1,4 +1,4 @@
-import csv, re
+import csv
 from datetime import datetime
 from models.tarefa import Tarefa
 
